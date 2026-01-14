@@ -1,0 +1,44 @@
+Reminder :
+The frontend for this project is designed to work with a Flask-based backend so it will not load successfully if the backend is not working or not connected. We recommend that you stand up the backend first and test using Postman or curl before you integrate the frontend.
+
+Set Up the Frontend
+The frontend app was built using create-react-app and uses NPM to manage software dependencies. NPM Relies on the package.json file located in the frontend directory of this repository.
+
+Using the Workspace
+The dependencies are already installed in the workspace. If you need to install them again, navigate to the /frontend directory and run:
+
+npm install
+To start the app in development mode, navigate to the /frontend directory and run:
+
+npm start
+Click the OPEN APP IN NEW TAB button to view the app in a new tab of your browser. The page will reload if you make edits.
+
+Working in your Local Environment
+Install Node and NPM This project requires on Nodejs and Node Package Manager (NPM). If you haven't already installed Node on your local machine, see the instructions here: Before continuing, you must download and install Node (the download includes NPM) from Nodejs.com(opens in a new tab).
+Install project dependencies After confirming you have NPM installed, navigate to the frontend directory of the project and run:
+npm install
+tip: npm iis shorthand for npm install
+
+To start the app in development mode, run:
+npm start
+Open (opens in a new tab)http://localhost:3000(opens in a new tab) to view it in the browser. The page will reload if you make edits.
+Working with the Frontend
+Request Formatting
+The frontend should be fairly straightforward and digestible. While working on your backend request handling and response formatting, you can reference the frontend to view how it parses the responses.
+
+You are not required to make any edits, but if choose to do so, you'll primarily work within the components folder where you'll find the endpoints utilized by the components.
+
+After you complete your endpoints, ensure you return to the frontend to confirm your API handles requests and responses appropriately:
+
+Endpoints defined as expected by the frontend
+Response body provided as expected by the frontend
+Optional: Updating Endpoints and API behavior
+Would you rather the API had different behavior - different endpoints, return the response body in a different format? Go for it! Make the updates to your API and the corresponding updates to the frontend so it works with your API seamlessly.
+
+Optional: Styling
+In addition, you may want to customize and style the frontend by editing the CSS in the stylesheets folder.
+
+Optional: Game Play Mechanics
+Currently, when a user plays the game they play up to five questions of the chosen category. If there are fewer than five questions in a category, the game will end when there are no more questions in that category.
+
+You can optionally update the gameplay to increase the number of questions or whatever other game mechanics you decide. Make sure to specify the new mechanics of the game in the README of the repo you submit so the reviewers are aware that the behavior is correct.

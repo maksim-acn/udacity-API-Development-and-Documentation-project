@@ -1,0 +1,102 @@
+Backend Instructions
+Lesson
+Downloads
+Cloud Resources
+Reminder :
+The frontend for this project is designed to work with a Flask-based backend so it will not load successfully if the backend is not working or not connected. We recommend that you stand up the backend first and test using Postman or curl before you integrate the frontend.
+
+Using the Workspace
+Step 1: Set up the Database
+In the workspace, we've written code to help you get the database set up and populated. Click the SET UP DATABASE button to start Postgres and populate the database.
+
+Step 2: Install Dependencies
+Navigate to the backend and install the required dependencies:
+
+cd backend
+pip install -r requirements.txt
+Step 3: Start the Server
+In the backend directory, start the Flask server by running:
+
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run
+Working in your Local Environment
+Step 1: Install Required Software
+Python 3.7 - Follow instructions to install the latest version of python for your platform in the python docs(opens in a new tab)
+Virtual Environment - We recommend working within a virtual environment whenever using Python for projects while working locally. This keeps your dependencies for each project separate and organized. Instructions for setting up a virtual environment for your platform can be found in the python docs(opens in a new tab)
+Postgres - If you don't already have it installed, see installation instructions for your operating system here:PostgreSQL Downloads(opens in a new tab)
+Step 2: Set up and Populate the Database
+With Postgres running, create a trivia database:
+createdb trivia
+From the backend folder in terminal, Populate the database using the trivia.psql file provided.run:
+psql trivia < trivia.psql
+Step 3: Install Dependencies
+Once your virtual environment is setup and running, install the required dependencies by navigating to the /backend directory and running:
+
+pip install -r requirements.txt
+Step 4: Start the Server
+Start the Server
+
+In the backend directory, start the Flask server by running:
+
+export FLASK_APP=flaskr
+export FLASK_ENV=development
+flask run
+Key Pip Dependencies
+Flask(opens in a new tab) is a lightweight backend microservices framework. Flask is required to handle requests and responses.
+SQLAlchemy(opens in a new tab) is the Python SQL toolkit and ORM we'll use to handle the lightweight SQL database. You'll primarily work in app.py and can referencemodels.py.
+Flask-CORS(opens in a new tab) is the extension we'll use to handle cross-origin requests from our frontend server.
+Setting Up Testing
+This project is a great opportunity to practice Test-Driven Development (or TDD) . As a reminder, the process for TDD is:
+
+Write a test for specific application behavior.
+Run the test and watch it fail.
+Write code to execute the required behavior.
+Test the code and rewrite as necessary to pass the test
+Refactor your code.
+Repeat - write your next test.
+For this project you need to write at least one test for the success and at least one error behavior of each endpoint using the unittest library. You should write the tests in backend/test_flaskr.py.
+
+Deploying Tests in the Workspace
+In the workspace, we've set up the code to create and populate the testing database for you. Just click the SET UP TESTING DATABASE button.
+
+To deploy the tests, run:
+
+python3 test_flaskr.py
+Deploying Tests in your Local Enivronment
+If you are working in a local environment, you'll need to manually set up and populate the testing database:
+
+To deploy the tests, run
+
+dropdb trivia_test
+createdb trivia_test
+psql trivia_test < trivia.psql
+To deploy the tests, run:
+
+python3 test_flaskr.py
+@TODO Tasks
+Look for specific tasks in the /backend/flaskr/-__init__.py file.
+
+For each endpoint, you are expected to define the endpoint and response data. You can use the frontend as a resource -- it is set up to expect certain endpoints and response data -- or you can specify different endpoints and update update the frontend.
+
+Use Flask-CORS to enable cross-domain requests and set response headers.
+Create an endpoint to handle GET requests for questions, including pagination (every 10 questions). This endpoint should return a list of questions, number of total questions, current category, categories.
+Create an endpoint to handle GET requests for all available categories.
+Create an endpoint to DELETE a question using a question ID.
+Create an endpoint to POST a new question, which will require the question and answer text, category, and difficulty score.
+Create a POST endpoint to get questions based on category.
+Create a POST endpoint to get questions based on a search term. It should return any questions for whom the search term is a substring of the question.
+Create a POST endpoint to get questions to play the quiz. This endpoint should take a category and previous question parameters and return a random questions within the given category, if provided, and that is not one of the previous questions.
+Create error handlers for all expected errors including 400, 404, 422, and 500.
+Troubleshooting:
+
+If you are working locally, then you may face issues while installing the dependencies. We suggest you install Python 3.7 or lower to resolve the issues.
+
+If you are working with higher versions of Python, follow these steps:
+
+Change psycopg2-binary from version 2.8.2 to version 2.9.3 in the requirements.txt file.
+Run the given commands in the terminal:
+pip3 install --upgrade jinja2
+pip3 install Flask==2.0.3
+pip3 install sqlalchemy --upgrade
+pip3 install flask-sqlalchemy
