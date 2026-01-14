@@ -1,9 +1,15 @@
+import os
 from sqlalchemy import Column, String, Integer
 from flask_sqlalchemy import SQLAlchemy
-database_name = 'trivia'
-database_user = 'postgres'
-database_password = 'password'
-database_host = 'localhost:5432'
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+database_name = os.environ.get('DB_NAME', 'trivia')
+database_user = os.environ.get('DB_USER', 'postgres')
+database_password = os.environ.get('DB_PASSWORD', 'password')
+database_host = os.environ.get('DB_HOST', 'localhost:5432')
 database_path = f'postgresql://{database_user}:{database_password}@{database_host}/{database_name}'
 
 db = SQLAlchemy()
@@ -26,7 +32,7 @@ class Question(db.Model):
     id = Column(Integer, primary_key=True)
     question = Column(String, nullable=False)
     answer = Column(String, nullable=False)
-    category = Column(String, nullable=False)
+    category = Column(Integer, nullable=False)
     difficulty = Column(Integer, nullable=False)
 
     def __init__(self, question, answer, category, difficulty):

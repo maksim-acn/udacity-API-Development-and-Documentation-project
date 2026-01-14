@@ -14,4 +14,6 @@ Thumbs.db
 env/
 frontend/node_modules/
 
+# Environment variables (keep .env.template, ignore actual .env)
 .env
+backend/.env
